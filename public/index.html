@@ -6,7 +6,7 @@
     <title>Socker Server</title>
 </head>
 <body>
-    <h1>Acceso Denegado....</h1>
+    <h1>Acceso Denegado!!!!!</h1>
     <script src="socket.io/socket.io.js"></script>
     <script>
         var socket = io();
@@ -23,6 +23,13 @@
 
         socket.on('mensaje', function(payload){
             console.log('Escuchando: ', payload);
+        });
+        socket.on('nuevo-mensaje', function(payload){
+            console.log('Escuchando emitir-mensaje: ', payload);
+        });
+        socket.on('active-bands', function(bands){
+            console.clear();
+            console.table(bands);
         });
     </script>
 </body>
